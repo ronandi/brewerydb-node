@@ -9,7 +9,7 @@ function Brewery(key) {
 Brewery.prototype.searchBeer = function(beername, callback)  {
     request(this.url + "&q=" +  beername, function(error, response, body) {
         if (!error && response.statusCode == 200) {
-            callback(JSON.parse(body).data);
+            callback(null, JSON.parse(body).data);
         } else {
             callback(error, null);
         }
