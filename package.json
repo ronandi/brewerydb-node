@@ -10,6 +10,7 @@
   "author": "ronandi",
   "license": "BSD",
   "dependencies": {
-    "request": "~2.16.6"
+    "request": "~2.16.6",
+    "querystring": "~0.2.0"
   }
 }
