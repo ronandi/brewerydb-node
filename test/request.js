@@ -7,7 +7,9 @@ describe('Request', function() {
     var req = new Request('test1', { param1: "val1", param2: "val2" } 
                          , { base_url: "google.com" });
     it('should have a correct url', function() {
-        req.url.should.equal('google.com/test1?param1=val1&param2=val2');
+        Request.__set__("request", function(url, callback) {
+            url.should.equal('google.com/test1?param1=val1&param2=val2');
+        });
     });
     describe('makeRequest', function() {
         it('should set data, page, and num pages', function() {
@@ -45,10 +47,18 @@ describe('Request', function() {
                 should.not.exist(reqdata);
             });
         });
-        /*
+        
         it('should handle no data return (but no failure)', function() {
+            Request.__set__("request", function(url, callback) {
+                callback(null, { statusCode:200 }
+                         , JSON.stringify({ status: "success" }));
+            });
+            req.makeRequest(function(err, reqdata) {
+                should.not.exist(err);
+                should.not.exist(reqdata);
+            });
         });
-       */
+       
     });
 });
 
