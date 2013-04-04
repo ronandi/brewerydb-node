@@ -22,7 +22,7 @@ describe('Request', function() {
             });
             req.makeRequest(function(err, reqdata) {
                 should.not.exist(err);
-                reqdata.data.should.eql(data);
+                reqdata.should.eql(data);
                 should.exist(req.numPages);
                 should.exist(req.page);
                 req.data.should.eql(data);

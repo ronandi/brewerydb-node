@@ -1,7 +1,7 @@
-var Beer = require('./lib/endpoints/beer');
+var Beer    = require('./lib/endpoints/beer');
 var Brewery = require('./lib/endpoints/brewery');
-var Search = require('./lib/endpoints/search');
-var Config = require('./config');
+var Search  = require('./lib/endpoints/search');
+var Config  = require('./config');
 
 function BreweryDB(key) {
     this.config = new Config();
