@@ -19,7 +19,7 @@ describe("Brewables", function() {
         });
         it("should use the general endpoint with the correct param given multiple ids", function() {
             brew.getById(["id1", "id2"], {}, null);
-            stub.calledWith("beers", { key: "abc123", ids: ["id1", "id2"] }, null).should.be.true;
+            stub.calledWith("beers", { key: "abc123", ids: "id1,id2" }, null).should.be.true;
         });
     });
     describe("find", function() {
