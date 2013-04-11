@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ronandi/brewerydb-api-node"
+    "url": "https://github.com/ronandi/brewerydb-node"
   },
   "author": "ronandi",
   "license": "MIT",
