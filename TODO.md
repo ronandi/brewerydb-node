@@ -5,4 +5,4 @@ Write support for:
 
 Add breweryDB.brewery(beer_id).beers support    
 
-Write test cases for Brewables, Beer, and Brewery
+[DONE]Write test cases for Brewables, Beer, and Brewery
