@@ -10,6 +10,7 @@ describe('Request', function() {
         Request.__set__("request", function(url, callback) {
             url.should.equal('google.com/test1?param1=val1&param2=val2');
         });
+        req.makeRequest(null);
     });
     describe('makeRequest', function() {
         it('should set data, page, and num pages', function() {
