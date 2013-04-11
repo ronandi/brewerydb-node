@@ -1,5 +1,5 @@
 {
-  "name": "brewery-api-node",
+  "name": "brewerydb-node",
   "version": "0.0.1",
   "description": "A wrapper for Brewerydb's REST api",
   "main": "index.js",
