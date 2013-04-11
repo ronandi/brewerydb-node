@@ -18,31 +18,36 @@ Callbacks should should take two arguments, err, and data, as per convention
 	
 ###Endpoints###
 ####Beer####
+**beer.getById**(id/Array of ids, params (see options in BreweryDb Api docs),
+callback)        
+
 	// /beer/:beerId
-	brewdb.beer.getById("avMkil", callback);
+	brewdb.beer.getById("avMkil", {}, callback);      
+
 	// /beers?ids=
-	brewdb.beer.getById(["avMkil", "XcvLTe"]);
+	brewdb.beer.getById(["avMkil", "XcvLTe"], { withBreweries: "Y" }, callback);     
+
 	// /beers?name=“bock”&abv=....
 	// can provide params that beers endpoint accepts (like abv, ibu, etc.)
-	brewdb.beer.find({ name:"bock" })
+	brewdb.beer.find({ name:"bock" }, callback)
 	
 ####Brewery####
-	brewdb.breweries.getById("g0jHqt");
-	brewdb.breweries.getById(["g0jHqt", "MWi5Kp"])
-	brewdb.breweries.find( { established: 2010 })
+	brewdb.breweries.getById("g0jHqt", {}, callback);
+	brewdb.breweries.getById(["g0jHqt", {}, "MWi5Kp"], callback)
+	brewdb.breweries.find( { established: 2010 }, callback)
 	
 ####Search####
-	brewdb.search.all( { q: "coors" });
-	brewdb.search.beers({ q: "dogfish" });
-	brewdb.search.breweries({ q: "dogfish" });	
+	brewdb.search.all( { q: "coors" }, callback);
+	brewdb.search.beers({ q: "dogfish" }, callback);
+	brewdb.search.breweries({ q: "dogfish" }, callback);	
 	
 ####Category####
-	brewdb.category.all();
-	brewdb.category.getById(1);
+	brewdb.category.all(callback);
+	brewdb.category.getById(1, callback);
 	
 ####Style####
-	brewdb.style.all();
-	brewdb.style.getById(1)
+	brewdb.style.all(callback);
+	brewdb.style.getById(1,callback)
 
 ##Todo##
 1. Write better tests?
