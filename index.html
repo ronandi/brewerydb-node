@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Brewerydb-node by ronandi</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Brewerydb-node</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/ronandi/brewerydb-node">View the Project on GitHub <small>ronandi/brewerydb-node</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/ronandi/brewerydb-node/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/ronandi/brewerydb-node/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/ronandi/brewerydb-node">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>brewerydb-node</h1>
+
+<h2>Status</h2>
+
+<p>Only very recently published: should be considered <strong>alpha</strong>!<br>
+This is somewhat tested, and somewhat finished. It does not completely wrap BreweryDB’s 
+REST api (notably all POST/edit actions on the db are unimplemented), but it does what I need it to do right now - get data from the db. I based my interface off the one <a href="https://github.com/tylerhunt/brewery_db">Tyler Hunt made his wrapper written in Ruby</a>. </p>
+
+<h2>Installation</h2>
+
+<p>You should install this library with npm:    </p>
+
+<pre><code>npm install brewerydb-node
+</code></pre>
+
+<h2>Documentation</h2>
+
+<h3>How to use</h3>
+
+<pre><code>var BreweryDb = require('brewerydb-node');
+var brewdb = new BreweryDb('your-key-here');
+</code></pre>
+
+<p>Callbacks should should take two arguments, err, and data, as per convention</p>
+
+<h3>Endpoints</h3>
+
+<h4>Beer</h4>
+
+<p><strong>beer.getById</strong>(id/Array of ids, params (see options in BreweryDb Api docs),
+callback)        </p>
+
+<pre><code>// /beer/:beerId
+brewdb.beer.getById("avMkil", {}, callback);      
+
+// /beers?ids=
+brewdb.beer.getById(["avMkil", "XcvLTe"], { withBreweries: "Y" }, callback);     
+
+// /beers?name=“bock”&amp;abv=....
+// can provide params that beers endpoint accepts (like abv, ibu, etc.)
+brewdb.beer.find({ name:"bock" }, callback)
+</code></pre>
+
+<h4>Brewery</h4>
+
+<pre><code>brewdb.breweries.getById("g0jHqt", {}, callback);
+brewdb.breweries.getById(["g0jHqt", {}, "MWi5Kp"], callback)
+brewdb.breweries.find( { established: 2010 }, callback)
+</code></pre>
+
+<h4>Search</h4>
+
+<pre><code>brewdb.search.all( { q: "coors" }, callback);
+brewdb.search.beers({ q: "dogfish" }, callback);
+brewdb.search.breweries({ q: "dogfish" }, callback);    
+</code></pre>
+
+<h4>Category</h4>
+
+<pre><code>brewdb.category.all(callback);
+brewdb.category.getById(1, callback);
+</code></pre>
+
+<h4>Style</h4>
+
+<pre><code>brewdb.style.all(callback);
+brewdb.style.getById(1,callback)
+</code></pre>
+
+<h2>Todo</h2>
+
+<ol>
+<li>Write better tests?</li>
+<li>Implement glassware</li>
+<li>Write better docs</li>
+</ol>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/ronandi">ronandi</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
