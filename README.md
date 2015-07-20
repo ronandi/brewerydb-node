@@ -50,7 +50,8 @@ callback)
 	brewdb.style.getById(1,callback)
 	
 ####Fermentables####
-	brewdb.fermentables.getById("166", {}, callback); //currently only fermentable search supported
+	//currently only fermentable search supported
+	brewdb.fermentables.getById("166", {}, callback);
 
 ##Todo##
 1. Write better tests?
