@@ -1,0 +1,32 @@
+{
+  "name": "brewerydb-node",
+  "version": "0.0.1",
+  "description": "A wrapper for Brewerydb's REST api",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ronandi/brewerydb-node"
+  },
+  "author": "ronandi",
+  "license": "MIT",
+  "dependencies": {
+    "request": "~2.16.6",
+    "querystring": "~0.2.0"
+  },
+  "devDependencies": {
+    "should": "~1.2.2",
+    "mocha": "~1.9.0",
+    "rewire": "~1.1.2",
+    "sinon": "~1.6.0"
+  },
+  "keywords": [
+    "brewery",
+    "brewerydb",
+    "beer",
+    "api",
+    "wrapper"
+  ]
+}
