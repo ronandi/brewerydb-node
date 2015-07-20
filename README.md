@@ -48,6 +48,9 @@ callback)
 ####Style####
 	brewdb.style.all(callback);
 	brewdb.style.getById(1,callback)
+	
+####Fermentables####
+	brewdb.fermentables.getById("166", {}, callback); //currently only fermentable search supported
 
 ##Todo##
 1. Write better tests?
