@@ -52,27 +52,10 @@ callback)
 	brewdb.style.getById(1,callback)
 
 ####Fermentables####
-  //find by id
+	//find by id
 	brewdb.fermentables.getById("166", {}, callback);
-  // find by page - pageNumber should be an integer - an empty object will return the first page
-  brewdb.fermentables.find({p: 'pageNumber'}, callback);
-
-####Search####
-	brewdb.search.all( { q: "coors" }, callback);
-	brewdb.search.beers({ q: "dogfish" }, callback);
-	brewdb.search.breweries({ q: "dogfish" }, callback);
-
-####Category####
-	brewdb.category.all(callback);
-	brewdb.category.getById(1, callback);
-
-####Style####
-	brewdb.style.all(callback);
-	brewdb.style.getById(1,callback)
-
-####Fermentables####
-	//currently only fermentable search supported
-	brewdb.fermentables.getById("166", {}, callback);
+	// find by page - pageNumber should be an integer - an empty object will return the first page
+	brewdb.fermentables.find({p: 'pageNumber'}, callback);
 
 ##Todo##
 1. Write better tests?
