@@ -8,7 +8,11 @@
   },
   "repository": {
     "type": "git",
+<<<<<<< HEAD
     "url": "https://github.com/JScearcy/brewerydb-node"
+=======
+    "url": "https://github.com/ronandi/brewerydb-node"
+>>>>>>> 84b37de4bace53f9a962a9f489071d9643551f11
   },
   "author": "ronandi",
   "license": "MIT",

@@ -2,12 +2,21 @@ brewerydb-node
 ================
 ##Status##
 Only very recently published: should be considered **alpha**!     
+<<<<<<< HEAD
 This is somewhat tested, and somewhat finished. It does not completely wrap BreweryDB’s
 REST api (notably all POST/edit actions on the db are unimplemented), but it does what I need it to do right now - get data from the db. I based my interface off the one [Tyler Hunt made his wrapper written in Ruby](https://github.com/tylerhunt/brewery_db).
 
 ##Installation##
 You should install this library with npm:    
 
+=======
+This is somewhat tested, and somewhat finished. It does not completely wrap BreweryDB’s 
+REST api (notably all POST/edit actions on the db are unimplemented), but it does what I need it to do right now - get data from the db. I based my interface off the one [Tyler Hunt made his wrapper written in Ruby](https://github.com/tylerhunt/brewery_db). 
+ 
+##Installation##
+You should install this library with npm:    
+   
+>>>>>>> 84b37de4bace53f9a962a9f489071d9643551f11
 	npm install brewerydb-node
 ##Documentation##
 ###How to use###
@@ -15,7 +24,11 @@ You should install this library with npm:
 	var brewdb = new BreweryDb('your-key-here');
 
 Callbacks should should take two arguments, err, and data, as per convention
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 84b37de4bace53f9a962a9f489071d9643551f11
 ###Endpoints###
 ####Beer####
 **beer.getById**(id/Array of ids, params (see options in BreweryDb Api docs),
@@ -30,11 +43,16 @@ callback)
 	// /beers?name=“bock”&abv=....
 	// can provide params that beers endpoint accepts (like abv, ibu, etc.)
 	brewdb.beer.find({ name:"bock" }, callback)
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 84b37de4bace53f9a962a9f489071d9643551f11
 ####Brewery####
 	brewdb.breweries.getById("g0jHqt", {}, callback);
 	brewdb.breweries.getById(["g0jHqt", {}, "MWi5Kp"], callback)
 	brewdb.breweries.find( { established: 2010 }, callback)
+<<<<<<< HEAD
 
 ####Search####
 	brewdb.search.all( { q: "coors" }, callback);
@@ -54,6 +72,25 @@ callback)
 	brewdb.fermentables.getById("166", {}, callback);
   // find by page - pageNumber should be an integer - an empty object will return the first page
   brewdb.fermentables.find({p: 'pageNumber'}, callback);
+=======
+	
+####Search####
+	brewdb.search.all( { q: "coors" }, callback);
+	brewdb.search.beers({ q: "dogfish" }, callback);
+	brewdb.search.breweries({ q: "dogfish" }, callback);	
+	
+####Category####
+	brewdb.category.all(callback);
+	brewdb.category.getById(1, callback);
+	
+####Style####
+	brewdb.style.all(callback);
+	brewdb.style.getById(1,callback)
+	
+####Fermentables####
+	//currently only fermentable search supported
+	brewdb.fermentables.getById("166", {}, callback);
+>>>>>>> 84b37de4bace53f9a962a9f489071d9643551f11
 
 ##Todo##
 1. Write better tests?

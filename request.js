@@ -1,6 +1,10 @@
 var request = require('request');
 var qs = require('querystring');
+<<<<<<< HEAD
 var cfg = require('./config');
+=======
+var cfg = require('../config');
+>>>>>>> 84b37de4bace53f9a962a9f489071d9643551f11
 
 function Request(endpoint, params, config) {
     config = config || cfg;
@@ -17,7 +21,11 @@ Request.prototype.makeRequest = function(callback) {
             var data = JSON.parse(body);
             if (data.status == "failure") {
                 callback(new Error(data.errorMessage), null);
+<<<<<<< HEAD
             } else if (!data.data) { //no results,
+=======
+            } else if (!data.data) { //no results, 
+>>>>>>> 84b37de4bace53f9a962a9f489071d9643551f11
                 callback(null, null, currentRequestObj);
             } else {
                 currentRequestObj.data = data.data; //these are some dumb fucking names
@@ -29,7 +37,11 @@ Request.prototype.makeRequest = function(callback) {
             if (error) {
                 callback(error, null, null);
             } else {
+<<<<<<< HEAD
                 callback(new Error("Server returned status: " +
+=======
+                callback(new Error("Server returned status: " + 
+>>>>>>> 84b37de4bace53f9a962a9f489071d9643551f11
                                    response.statusCode), null, null);
             }
         }
@@ -42,3 +54,7 @@ Request.prototype.nextPage = function(callback) {
 }
 
 module.exports = Request;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 84b37de4bace53f9a962a9f489071d9643551f11
