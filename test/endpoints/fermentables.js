@@ -1,5 +1,5 @@
 var should = require('should');
-var Fermentables = require('../../lib/endpoints/fermentables');
+var Fermentables = require('../lib/endpoints/fermentables');
 
 describe('fermentables', function() {
     var fermentablestest = new Fermentables({ key: "123" });
