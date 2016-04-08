@@ -5,7 +5,8 @@ This is somewhat tested, and somewhat finished. It does not completely wrap Brew
 REST api (notably all POST/edit actions on the db are unimplemented), but it does what I need it to do right now - get data from the db. I based my interface off the one [Tyler Hunt made his wrapper written in Ruby](https://github.com/tylerhunt/brewery_db).
 
 ##Installation##
-You should install this library with npm:    
+You should install this library with npm:
+
 	npm install brewerydb-node
 ##Documentation##
 ###How to use###
