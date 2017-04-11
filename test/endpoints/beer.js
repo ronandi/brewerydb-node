@@ -16,4 +16,7 @@ describe('Beer', function() {
     it('should have a find method', function() {
         should.exist(beertest.find);
     });
+    it('should have a all method', function() {
+        should.exist(beertest.all);
+    });
 });
