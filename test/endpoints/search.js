@@ -31,7 +31,13 @@ describe('Search', function() {
         });
         describe("breweries()", function() {
             it("should have a type param set to 'brewery'", function() {
-                search.breweries({ q: "Coors" }, null);
+                search.breweries("", { q: "Coors" }, null);
+                stub.calledWith("search", { key: "abc123", q: "Coors", type: "brewery"});
+            });
+        });
+        describe("breweries()", function() {
+            it("should accept an optional route", function() {
+                search.breweries("/search/geo/point", { q: "Coors" }, null);
                 stub.calledWith("search", { key: "abc123", q: "Coors", type: "brewery"});
             });
         });
