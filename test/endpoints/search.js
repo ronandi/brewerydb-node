@@ -25,7 +25,7 @@ describe('Search', function() {
         });
         describe("beers()", function() {
             it("should have a type param set to 'beer'", function() {
-                search.beers({ q: "Coors" }, null);
+                search.beers("", { q: "Coors" }, null);
                 stub.calledWith("search", { key: "abc123", q: "Coors", type: "beer"});
             });
         });
@@ -49,4 +49,3 @@ describe('Search', function() {
         });
     });
 });
-
